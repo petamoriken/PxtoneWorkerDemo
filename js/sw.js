@@ -1,4 +1,4 @@
-importScripts("../../lib/pxtnDecoder.js", "service.js");
+importScripts("pxtnDecoder.js", "service.js");
 
 (() => {
 
@@ -26,7 +26,6 @@ function copyHeaders(_headers) {
 }
 
 self.addEventListener("fetch", e => {
-    console.log("fetch");
 
     const _request = e.request;
 
@@ -93,10 +92,6 @@ self.addEventListener("fetch", e => {
         return new Response(buffer, { status, headers });
         
     })());
-});
-
-self.addEventListener("foreignfetch", () => {
-    console.log("foteignfetch");    
 });
 
 })();
