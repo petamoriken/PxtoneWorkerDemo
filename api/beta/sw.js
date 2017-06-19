@@ -39,7 +39,7 @@ self.addEventListener("fetch", e => {
     const rangeStr = _headers.get("range");
 
     const [, ...range] = (rangeReg.exec(rangeStr || "") || []).map(e => e ? e | 0 : null);
-    const isRangeRequest = typeof range[1] === "number";
+    const isRangeRequest = (typeof range[0] === "number" || typeof range[1] === "number") && !(range[0] === 0 && range[1] === null);
 
     let headers, request;
     if(isRangeRequest) {

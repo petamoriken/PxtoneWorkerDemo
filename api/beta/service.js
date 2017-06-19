@@ -47,7 +47,7 @@ self.Service = class Service {
         return service_load(service, descripter);
     }
 
-    vomit(start = 0, end = null) {
+    vomit(start, end = null) {
         const { channel, sampleRate, service } = this;
 
         const totalSample = service_getTotalSample(this.service);
