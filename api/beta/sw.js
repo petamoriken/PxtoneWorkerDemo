@@ -26,6 +26,8 @@ function copyHeaders(_headers) {
 }
 
 self.addEventListener("fetch", e => {
+    console.log("fetch");
+
     const _request = e.request;
 
     const url = new URL(_request.url);
@@ -91,6 +93,10 @@ self.addEventListener("fetch", e => {
         return new Response(buffer, { status, headers });
         
     })());
+});
+
+self.addEventListener("foreignfetch", () => {
+    console.log("foteignfetch");    
 });
 
 })();
