@@ -1,4 +1,4 @@
-importScripts("pxtnDecoder.js", "service.js");
+importScripts("js/pxtnDecoder.js", "js/service.js");
 
 (() => {
 
